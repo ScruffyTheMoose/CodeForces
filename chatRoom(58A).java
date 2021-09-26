@@ -1,3 +1,6 @@
+// This solution just count the occurrences of the letters in the string "hello" in order as they occur.
+
+
 import java.io.*;
 // 58A
 public class chatRoom {
@@ -12,6 +15,7 @@ public class chatRoom {
         int o = 0;
 
         // Iterating through string once and counting occurrences in order of desired letters
+        // Will not count the next letter until threshold is reached
         for ( int i = 0; i < input.length(); i++ ) {
             if ( h == 0 ) {
                 if ( input.charAt(i) == 'h' ) {
@@ -32,7 +36,7 @@ public class chatRoom {
             }
         }
 
-        // Validating results of iteration and printing result
+        // Validating results of iteration by checking if the needed counts were reached and printing result
         if ( h == 1 && e == 1 && l == 2 && o == 1 ) {
             System.out.println("YES");
         } else {
