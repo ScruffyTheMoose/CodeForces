@@ -13,23 +13,24 @@ public class moveBrackets {
         int tc;
         
         for ( int i = 0; i < t; i++ ) {
-            // catching inputs
+            // Taking the inputs
             n = Integer.parseInt(br.readLine());
             p = br.readLine();
             tc = 0;
             c = 0;
 
-            // iterating through string
+            // Iterating through string and using our companion variable c to track the balance of the items.
+            // Open parenthesis are ++, closed ar --.
             for ( int j = 0; j < n; j++ ) {
 
-                // using companion variable to track balance of string
+                // Using our companion variable to track balance of string
                 if ( p.charAt(j) == '(' ) {
                     c++;
                 } else if ( p.charAt(j) == ')' ) {
                     c--;
                 }
 
-                // moving closing bracket to end, adding to count, and holding current index
+                // Moving the closing bracket to end if our balance is lost, adding to count, and holding current index
                 if ( c < 0 ) {
                     p = p.substring(0, j) + p.substring(j+1) + ")";
                     c = 0;
